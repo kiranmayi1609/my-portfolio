@@ -1,0 +1,100 @@
+@import '../../../styles.scss';
+
+// .logo {
+//   font-size: 1.5rem;
+//   font-weight: 700;
+//   color: var(--primary);
+//   font-family: 'Fira Code', monospace;
+
+//   &::before {
+//     content: "> ";
+//     color: var(--accent);
+//   }
+// }
+
+// .nav-links {
+//   display: flex;
+//   gap: 2rem;
+
+//   a {
+//     color: var(--light);
+//     text-decoration: none;
+//     font-weight: 500;
+//     transition: color 0.3s;
+//     position: relative;
+//     font-family: 'Fira Code', monospace;
+//     font-size: 0.9rem;
+
+//     &:hover {
+//       color: var(--primary);
+//     }
+
+//     &::before {
+//       content: "// ";
+//       color: var(--accent);
+//       opacity: 0;
+//       transition: opacity 0.3s;
+//     }
+
+//     &:hover::before {
+//       opacity: 1;
+//     }
+//   }
+// }
+
+
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    background-color: rgba(23, 37, 42, 0.95);
+    border-bottom: 1px solid var(--primary);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: 'Fira Code', monospace;
+
+    &::before {
+        content: "> ";
+        color: var(--accent);
+    }
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+
+    &:hover {
+        color: var(--primary);
+    }
+
+    &::before {
+        content: "// ";
+        color: var(--accent);
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+
+    &:hover::before {
+        opacity: 1;
+    }
+}

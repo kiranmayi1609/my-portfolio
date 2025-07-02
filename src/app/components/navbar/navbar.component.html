@@ -1,0 +1,16 @@
+
+<!-- 
+<div class="logo">dev_portfolio</div>
+<div class="nav-links">
+  <a routerLink="/" fragment="about">about</a>
+  <a routerLink="/" fragment="experience">experience</a>
+  <a routerLink="/" fragment="projects">projects</a>
+  <a routerLink="/" fragment="contact">contact</a>
+</div> -->
+
+<nav>
+    <div class="logo">dev_portfolio</div>
+    <div class="nav-links">
+        <a *ngFor="let link of navLinks" [href]="link.path">{{ link.label }}</a>
+    </div>
+</nav>

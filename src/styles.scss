@@ -1,1 +1,41 @@
 /* You can add global styles to this file, and also import other style files */
+/* Developer Color Palette */
+:root {
+  --primary: #3AAFA9;  /* Teal - for highlights */
+  --secondary: #2B7A78;  /* Darker teal */
+  --accent: #DEF2F1;  /* Light teal */
+  --dark: #17252A;  /* Almost black */
+  --light: #FEFFFF;  /* White */
+  --code-bg: #1E1E1E;  /* VS Code-like background */
+  --code-text: #D4D4D4;  /* VS Code-like text */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Fira Code', 'Courier New', monospace;
+}
+
+body {
+  background-color: var(--dark);
+  color: var(--light);
+  line-height: 1.6;
+}
+
+/* Terminal-like navigation */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(23, 37, 42, 0.95);
+  border-bottom: 1px solid var(--primary);
+}
+
+/* Add all other styles from your original CSS here */
+/* ... (copy all the CSS styles from your original HTML file) ... */
