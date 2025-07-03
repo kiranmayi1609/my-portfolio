@@ -1,0 +1,14 @@
+<section id="experience">
+<h2 class="section-title">Experience <span class="cursor"></span></h2>
+
+<div class="experience-item" *ngFor="let exp of experiences">
+  <div class="experience-header">
+    <h3 class="experience-title">{{exp.title}}</h3>
+    <span class="experience-date">{{exp.date}}</span>
+  </div>
+  <h4 class="experience-company">{{exp.company}}</h4>
+  <p class="experience-description">
+    <span *ngFor="let desc of exp.description">- {{desc}}<br></span>
+  </p>
+</div>
+</section>

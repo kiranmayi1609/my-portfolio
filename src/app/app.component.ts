@@ -5,11 +5,14 @@ import { HomeComponent } from "./components/home/home.component";
 import { AboutComponent } from "./components/about/about.component";
 import { ContactComponent } from "./components/contact/contact.component";
 import { ProjectsComponent } from "./components/projects/projects.component";
+import { ExperienceComponent } from "./components/experience/experience.component";
+import { JourneyComponent } from "./components/journey/journey.component";
+import { FooterComponent } from "./components/footer/footer.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, NavbarComponent, HomeComponent, AboutComponent, ContactComponent, ProjectsComponent],
+  imports: [NavbarComponent, HomeComponent, AboutComponent, ContactComponent, ProjectsComponent, ExperienceComponent, JourneyComponent, FooterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

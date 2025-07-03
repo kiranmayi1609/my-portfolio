@@ -1,4 +1,4 @@
-@import '../../../styles.scss';
+
 
 // .logo {
 //   font-size: 1.5rem;
@@ -44,57 +44,197 @@
 
 
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 5%;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
-    background-color: rgba(23, 37, 42, 0.95);
-    border-bottom: 1px solid var(--primary);
-}
+// nav {
+//     display: flex;
+//     justify-content: space-between;
+//     align-items: center;
+//     padding: 1.5rem 5%;
+//     position: fixed;
+//     width: 100%;
+//     top: 0;
+//     z-index: 100;
+//     background-color: rgba(23, 37, 42, 0.95);
+//     border-bottom: 1px solid var(--primary);
+// }
 
-.logo {
+// .logo {
+//     font-size: 1.5rem;
+//     font-weight: 700;
+//     color: var(--primary);
+//     font-family: 'Fira Code', monospace;
+
+//     &::before {
+//         content: "> ";
+//         color: var(--accent);
+//     }
+// }
+
+// .nav-links {
+//     display: flex;
+//     gap: 2rem;
+// }
+
+// .nav-links a {
+//     color: var(--light);
+//     text-decoration: none;
+//     font-weight: 500;
+//     transition: color 0.3s;
+//     position: relative;
+//     font-family: 'Fira Code', monospace;
+//     font-size: 0.9rem;
+
+//     &:hover {
+//         color: var(--primary);
+//     }
+
+//     &::before {
+//         content: "// ";
+//         color: var(--accent);
+//         opacity: 0;
+//         transition: opacity 0.3s;
+//     }
+
+//     &:hover::before {
+//         opacity: 1;
+//     }
+// }
+
+
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 5%;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+//   background-color: rgba(23, 37, 42, 0.95);
+  border-bottom: 1px solid var(--primary);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+
+  .logo {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary);
     font-family: 'Fira Code', monospace;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 
     &::before {
-        content: "> ";
-        color: var(--accent);
+      content: "> ";
+      color: var(--accent);
     }
-}
-
-.nav-links {
-    display: flex;
-    gap: 2rem;
-}
-
-.nav-links a {
-    color: var(--light);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-    position: relative;
-    font-family: 'Fira Code', monospace;
-    font-size: 0.9rem;
 
     &:hover {
-        color: var(--primary);
+      transform: translateX(5px);
     }
+  }
 
-    &::before {
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+
+    a {
+      color: var(--light);
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s;
+      position: relative;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      text-transform: lowercase;
+      padding: 0.5rem 0;
+
+      &:hover {
+        color: var(--primary);
+
+        &::before {
+          opacity: 1;
+        }
+      }
+
+      &::before {
         content: "// ";
         color: var(--accent);
         opacity: 0;
         transition: opacity 0.3s;
+        position: absolute;
+        left: -1.2rem;
+      }
+
+      &.active {
+        color: var(--primary);
+        font-weight: 600;
+
+        &::before {
+          opacity: 1;
+        }
+      }
     }
 
-    &:hover::before {
+    @media (max-width: 768px) {
+      position: fixed;
+      top: 80px;
+      left: 0;
+      width: 100%;
+      background-color: var(--dark);
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
+      border-top: 1px solid var(--primary);
+      transform: translateY(-150%);
+      opacity: 0;
+      transition: all 0.3s ease;
+      z-index: 999;
+
+      &.active {
+        transform: translateY(0);
         opacity: 1;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      a {
+        padding: 0.8rem 2rem;
+        width: 100%;
+        text-align: center;
+        border-left: 3px solid transparent;
+
+        &:hover {
+          border-left-color: var(--accent);
+        }
+
+        &.active {
+          background: rgba(58, 175, 169, 0.1);
+          border-left-color: var(--primary);
+        }
+
+        &::before {
+          position: static;
+          margin-right: 0.5rem;
+        }
+      }
     }
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0.5rem;
+
+    &:hover {
+      color: var(--primary);
+    }
+
+    @media (max-width: 768px) {
+      display: block;
+    }
+  }
 }

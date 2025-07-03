@@ -1,0 +1,39 @@
+<!-- <section class="journey-section">
+  <h2 class="section-title">My Journey<span class="cursor"></span></h2>
+  
+  <div class="timeline">
+    <div class="timeline-line"></div>
+    
+    <div 
+      *ngFor="let event of timelineEvents; let i = index" 
+      class="timeline-event"
+      [class.active]="activeIndex === i"
+      [class.work]="event.type === 'work'"
+      [class.education]="event.type === 'education'"
+      [class.milestone]="event.type === 'milestone'"
+      (click)="setActive(i)"
+    >
+      <div class="event-icon">{{ event.icon }}</div>
+      <div class="event-year">{{ event.year }}</div>
+      <div class="event-content">
+        <h3>{{ event.title }}</h3>
+        <p>{{ event.description }}</p>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+<section id="journey">
+  <h2 class="section-title">My Journey<span class="cursor"></span></h2>
+
+  <div class="roadmap">
+    <div class="roadmap-item" *ngFor="let step of timeline; let i = index" [ngClass]="{ 'left': i % 2 === 0, 'right': i % 2 !== 0 }">
+      <div class="content">
+        <h3>{{ step.year }}</h3>
+        <h4>{{ step.title }}</h4>
+        <p>{{ step.description }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+

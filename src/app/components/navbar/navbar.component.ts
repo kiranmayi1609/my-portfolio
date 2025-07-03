@@ -11,9 +11,10 @@ import { Component } from '@angular/core';
 export class NavbarComponent {
 
     navLinks = [
-    { path: '#about', label: 'about' },
-    { path: '#experience', label: 'experience' },
-    { path: '#projects', label: 'projects' },
-    { path: '#contact', label: 'contact' }
+    { path: '/about', label: 'about' },
+    { path: '/experience', label: 'experience' },
+    { path: '/projects', label: 'projects' },
+    { path: '/contact', label: 'contact' },
+    
   ];
 }

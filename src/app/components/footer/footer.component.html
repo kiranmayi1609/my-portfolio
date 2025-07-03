@@ -1,0 +1,30 @@
+<footer>
+  <div class="footer-content">
+    <div class="social-links">
+      <a 
+        *ngFor="let link of socialLinks" 
+        [href]="link.url" 
+        target="_blank" 
+        rel="noopener noreferrer"
+        [attr.aria-label]="link.icon"
+      >
+        <i class="fab fa-{{link.icon}}"></i>
+      </a>
+    </div>
+    
+    <div class="footer-nav">
+      <a routerLink="/">Home</a>
+      <a routerLink="/about">About</a>
+      <a routerLink="/journey">Journey</a>
+      <a routerLink="/projects">Projects</a>
+      <a routerLink="/contact">Contact</a>
+    </div>
+    
+    <div class="copyright">
+      <p>
+        /* &copy; {{currentYear}} <span class="highlight">Your Name</span> - 
+        <span class="code-style">All code rights reserved</span> */
+      </p>
+    </div>
+  </div>
+</footer>
