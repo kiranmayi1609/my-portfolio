@@ -1,17 +1,25 @@
 
-<!-- 
-<div class="logo">dev_portfolio</div>
-<div class="nav-links">
-  <a routerLink="/" fragment="about">about</a>
-  <a routerLink="/" fragment="experience">experience</a>
-  <a routerLink="/" fragment="projects">projects</a>
-  <a routerLink="/" fragment="contact">contact</a>
-</div> -->
+
 
 <nav>
-    <div class="logo">dev_portfolio</div>
-    <div class="nav-links">
-        <a *ngFor="let link of navLinks" [href]="link.path">{{ link.label }}</a>
-    </div>
+  <div class="logo" routerLink="/">Kiranmayi_portfolio</div>
+  <div class="nav-links">
+    <a 
+      *ngFor="let item of navItems"
+      [routerLink]="item.path"
+      routerLinkActive="active"
+      [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+      (click)="navigate(item.path)">
+      {{ item.label }}
+    </a>
+  </div>
 </nav>
 
+<!-- <nav>
+  <a routerLink="/">Home</a>
+  <a routerLink="/about">About</a>
+  <a routerLink="/experience">Experience</a>
+  <a routerLink="/journey">Journey</a>
+  <a routerLink="/projects">Projects</a>
+  <a routerLink="/contact">Contact</a>
+</nav> -->

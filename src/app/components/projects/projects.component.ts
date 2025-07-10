@@ -43,9 +43,9 @@ export class ProjectsComponent {
 
    projects = [
     {
-      title: 'E-commerce Platform',
+      title: 'Crypto E-commerce',
       description: 'A full-featured online store with product management, cart functionality, and payment processing.',
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80',
+      imageUrl: '/crypto.JPG',
       tags: ['React', 'Node.js', 'MongoDB', 'Stripe API'],
       liveLink: '#',
       sourceLink: '#'
@@ -53,7 +53,7 @@ export class ProjectsComponent {
     {
       title: 'DevOps Dashboard',
       description: 'Centralized monitoring tool for cloud infrastructure with real-time metrics and alerts.',
-      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1469&q=80',
+      imageUrl: '/foodorder.JPG',
       tags: ['Python', 'AWS', 'Docker', 'Prometheus'],
       liveLink: '#',
       sourceLink: '#'
@@ -61,7 +61,7 @@ export class ProjectsComponent {
     {
       title: 'API Gateway',
       description: 'Custom API gateway with authentication, rate limiting, and request transformation.',
-      imageUrl: 'https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1636&q=80',
+      imageUrl: 'https://www.whizlabs.com/blog/wp-content/uploads/2018/08/big-data-pipeline.png',
       tags: ['Node.js', 'Redis', 'JWT', 'Kong'],
       liveLink: '#',
       sourceLink: '#'

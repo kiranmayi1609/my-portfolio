@@ -11,8 +11,8 @@ import { Component } from '@angular/core';
 export class FooterComponent {
     currentYear = new Date().getFullYear();
   socialLinks = [
-    { icon: 'github', url: 'https://github.com/yourusername' },
-    { icon: 'linkedin', url: 'https://linkedin.com/in/yourprofile' },
+    { icon: 'github', url: 'https://github.com/kiranmayi1609' },
+    { icon: 'linkedin', url: 'www.linkedin.com/in/kiranmayi-tummala' },
     { icon: 'codepen', url: 'https://codepen.io/yourprofile' },
     { icon: 'medium', url: 'https://medium.com/@yourusername' }
   ];

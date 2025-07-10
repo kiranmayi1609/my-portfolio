@@ -232,6 +232,14 @@ nav {
     &:hover {
       color: var(--primary);
     }
+    .nav-links a.active {
+  color: var(--primary);
+  font-weight: 600;
+  
+  &::before {
+    opacity: 1;
+  }
+}
 
     @media (max-width: 768px) {
       display: block;

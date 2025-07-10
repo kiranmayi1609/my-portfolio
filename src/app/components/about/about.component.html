@@ -20,30 +20,46 @@
 </section> -->
 
 <section id="about">
-  <h2 class="section-title">About Me<span class="cursor"></span></h2>
-
+  <h2 class="section-title">
+    <span class="bracket">&lt;</span>
+    About
+    <span class="cursor"></span>
+    <span class="bracket">&gt;</span>
+  </h2>
+  
   <div class="about-content">
-    <!-- Left: About text -->
     <div class="about-text">
-      <p *ngFor="let line of aboutText">{{ line }}</p>
+      <p>I'm a passionate software engineer with experience building web applications .</p>
+      <p>My expertise spans the full development stack, with particular focus on creating efficient, maintainable code and intuitive user experiences.</p>
+      <p>I believe in continuous learning and staying updated with the latest technologies and best practices in software development.</p>
+      
+      <div class="skills">
+        <h3>Technical Skills<span class="cursor"></span></h3>
+        <div class="skills-list">
+          <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
+        </div>
+      </div>
     </div>
-
-    <!-- Right: Carousel -->
+    
     <div class="certifications">
-      <h3>Certifications<span class="cursor"></span></h3>
-
-      <div class="carousel-container">
-        <div class="carousel-track">
-          <div class="cert-card" *ngFor="let cert of certifications">
-            <img [src]="cert.badgeUrl" [alt]="cert.title" />
-            <h4>{{ cert.title }}</h4>
-            <p class="issuer">{{ cert.issuer }}</p>
-            <p class="date">{{ cert.date }}</p>
-            <a [href]="cert.verifyLink" target="_blank" class="verify-link">Verify</a>
+      <h3>Certifications & Courses<span class="cursor"></span></h3>
+      <div class="certification-cards">
+        <div class="cert-card" *ngFor="let cert of certifications">
+          <div class="cert-header">
+            <img [src]="cert.logo" [alt]="cert.provider + ' logo'" class="cert-logo">
+            <div class="cert-info">
+              <h4>{{ cert.title }}</h4>
+              <p class="cert-provider">{{ cert.provider }}</p>
+            </div>
           </div>
+          <p class="cert-date">{{ cert.date }}</p>
+          <a [href]="cert.link" target="_blank" class="cert-link">
+            View Credential <i class="fas fa-external-link-alt"></i>
+          </a>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
