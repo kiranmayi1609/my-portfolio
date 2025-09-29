@@ -1,23 +1,5 @@
-<!-- <section id="about">
-    <h2 class="section-title">About<span class="cursor"></span></h2>
-    <div class="about-content">
-        <div class="about-text">
-            <p>I'm a passionate software engineer with 5+ years of experience building web applications and scalable systems.</p>
-            <p>My expertise spans the full development stack, with particular focus on creating efficient, maintainable code and intuitive user experiences.</p>
-            <p>I believe in continuous learning and staying updated with the latest technologies and best practices in software development.</p>
-            
-            <div class="skills">
-                <h3>Technical Skills<span class="cursor"></span></h3>
-                <div class="skills-list">
-                    <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
-                </div>
-            </div>
-        </div>
-        <div class="about-image">
-             <img src="" alt="Developer Image"> 
-        </div>
-    </div>
-</section> -->
+
+
 
 <section id="about">
   <h2 class="section-title">
@@ -28,38 +10,82 @@
   </h2>
   
   <div class="about-content">
-    <div class="about-text">
-      <p>I'm a passionate software engineer with experience building web applications .</p>
-      <p>My expertise spans the full development stack, with particular focus on creating efficient, maintainable code and intuitive user experiences.</p>
-      <p>I believe in continuous learning and staying updated with the latest technologies and best practices in software development.</p>
-      
-      <div class="skills">
+    <div class="about-text animated delay-1">
+    
+      <h1>Full-Stack Developer & Data Enthusiast</h1>
+      <p>I'm a passionate <span class="highlight">TEC student</span> specializing in <span class="highlight">Data + Communication</span>, with hands-on experience in:</p>
+     
+      <ul>
+        <li><span class="highlight">Full-stack development</span>: C#, Angular, .NET</li>
+        <li><span class="highlight">Mobile development</span>: React Native (cross-platform)</li>
+        <li><span class="highlight">Data/Cloud</span>: Big Data (Kafka), Linux/Windows environments</li>
+      </ul>
+
+       <div class="approach">
+        <h3>My Approach</h3>
+        <div class="approach-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span><strong>Deep-dive learning</strong> – Strong fundamentals first for faster problem-solving</span>
+        </div>
+        <div class="approach-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span><strong>Adaptive multitasker</strong> – Thrive in fast-paced tech environments</span>
+        </div>
+        <div class="approach-item">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          <span><strong>Theory → Practice</strong> – Learn by building, debugging, and optimizing pipelines</span>
+        </div>
+      </div>
+    </div>
+     
+
+       <div class="skills">
         <h3>Technical Skills<span class="cursor"></span></h3>
         <div class="skills-list">
           <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
         </div>
       </div>
+      
     </div>
-    
-    <div class="certifications">
-      <h3>Certifications & Courses<span class="cursor"></span></h3>
-      <div class="certification-cards">
-        <div class="cert-card" *ngFor="let cert of certifications">
-          <div class="cert-header">
-            <img [src]="cert.logo" [alt]="cert.provider + ' logo'" class="cert-logo">
-            <div class="cert-info">
-              <h4>{{ cert.title }}</h4>
-              <p class="cert-provider">{{ cert.provider }}</p>
-            </div>
-          </div>
-          <p class="cert-date">{{ cert.date }}</p>
-          <a [href]="cert.link" target="_blank" class="cert-link">
-            View Credential <i class="fas fa-external-link-alt"></i>
-          </a>
+   <!-- Highlights Section -->
+<div class="skills">
+  <h3>Highlights<span class="cursor"></span></h3>
+   <div class="highlights-design-1">
+      <div
+        class="highlight-circle"
+        *ngFor="let h of highlights"
+      >
+        <div class="circle-container">
+          <svg width="120" height="120" viewBox="0 0 120 120">
+            <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
+            <circle
+              class="circle-progress"
+              cx="60"
+              cy="60"
+              r="54"
+              [attr.stroke-dasharray]="circumference"
+              [attr.stroke-dashoffset]="circumference - (h.percent / 100) * circumference"
+            ></circle>
+          </svg>
+          <div class="circle-text">{{ h.percent }}%</div>
         </div>
+        <div class="circle-label">{{ h.label }}</div>
+        <p>{{ h.description }}</p>
       </div>
     </div>
-  </div>
+  <!-- <div class="skills-list">
+    <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
+  </div>   -->
+</div>
 </section>
 
 

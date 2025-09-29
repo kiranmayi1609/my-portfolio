@@ -8,6 +8,7 @@
     margin-top: -80px;
     background: linear-gradient(to right, rgba(30, 30, 30, 0.9), rgba(30, 30, 30, 0.7)), 
                 url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center/cover;
+    
 }
 
 .home-content {
@@ -47,6 +48,27 @@
         color: var(--accent);
     }
 }
+
+.cta-button {
+  display: inline-block;
+  padding: 0.7rem 1.5rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  cursor: pointer;
+//   background: #ff7300; /* same color */
+    background: var(--accent);
+  color: #333;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-right: 1rem;
+}
+
+.cta-button:hover {
+  background: var(--primary); /* slightly darker on hover */
+  transform: translateY(-3px);
+}
+
 
 @media (max-width: 768px) {
     .hero h1 {

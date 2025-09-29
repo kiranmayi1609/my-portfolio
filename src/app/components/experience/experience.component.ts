@@ -19,25 +19,30 @@ export class ExperienceComponent {
 
   experiences: Experience[] = [
     {
-      title: 'Senior Software Engineer',
+      title: 'TEC Practice center (Internship/Practical Experience) ',
       date: '2021 - Present',
-      company: 'TechCorp Inc.',
+      company: 'Ballerup,Denmark',
       description: [
-        'Lead development of customer-facing web applications using React and Node.js',
-        'Designed and implemented microservices architecture improving scalability by 40%',
-        'Mentored junior developers and conducted code reviews',
-        'Optimized database queries reducing API response times by 30%'
+        'Worked as a full-stack developer, building websites and applications using C# Web API, Angular, Blazor, WPF, and MS SQL.',
+        'Integrated front-end and back-end systems, implementing RESTful APIs, database optimization, and workflow automation.',
+        'Led UI/UX design using Figma and applied UML and OOP principles, improving usability of applications.',
+        'Developed data processing modules in C# using LINQ, reducing report generation time and improving performance.',
+        'Built WPF and ASP.NET applications for workflow automation, adopted by 20+ users.',
+        'Collaborated with cross-functional teams to translate business logic into scalable software solutions.',
+        'Gained hands-on experience with GitHub CI/CD pipelines, version control, and team collaboration.',
+        'Participated in Agile ceremonies, contributing to sprint planning, reviews, and retrospectives.'
+
       ]
     },
     {
-      title: 'Software Developer',
-      date: '2018 - 2021',
-      company: 'Digital Solutions LLC',
+      title: 'Laven Pharma India Pvt Ltd',
+      date: '2011-2013',
+      company: 'Vijayawada,India',
       description: [
-        'Developed and maintained enterprise web applications',
-        'Implemented automated testing reducing bugs in production by 25%',
-        'Collaborated with UX designers to improve user experience',
-        'Integrated third-party APIs for payment processing and analytics'
+        'Automated sales trend analysis using Excel and statistical models, improving forecast accuracy by 20%.',
+        'Developed data dashboards tracking product performance across 50+ retail locations.',
+        'Worked with marketing teams to create technical product documentation, ensuring regulatory compliance',
+        'Analyzed large datasets from multiple sources to identify market growth opportunities.'
       ]
     }
   ];

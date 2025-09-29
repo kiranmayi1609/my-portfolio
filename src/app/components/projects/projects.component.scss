@@ -1,120 +1,4 @@
-// .projects-grid {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-//   gap: 2rem;
-//   padding: 0 2rem; // Adds left and right margin
-// }
 
-// .project-card {
-//   background: var(--code-bg);
-//   border-radius: 8px;
-//   overflow: hidden;
-//   transition: transform 0.3s;
-//   border: 1px solid rgba(58, 175, 169, 0.3);
-  
-//   &:hover {
-//     transform: translateY(-5px);
-//     border-color: var(--primary);
-//     box-shadow: 0 5px 15px rgba(58, 175, 169, 0.2);
-//   }
-// }
-
-// .project-image {
-//   height: 200px;
-//   overflow: hidden;
-//   border-bottom: 1px solid rgba(58, 175, 169, 0.3);
-  
-//   img {
-//     width: 100%;
-//     height: 100%;
-//     object-fit: cover;
-//     transition: transform 0.5s;
-//   }
-// }
-
-// .project-card:hover .project-image img {
-//   transform: scale(1.05);
-// }
-
-// .project-info {
-//   padding: 1.5rem;
-  
-//   h3 {
-//     margin-bottom: 0.5rem;
-//     color: var(--primary);
-//     font-weight: 400;
-//   }
-  
-//   p {
-//     color: var(--code-text);
-//     margin-bottom: 1rem;
-//     font-size: 0.95rem;
-//   }
-// }
-
-// .project-tags {
-//   display: flex;
-//   flex-wrap: wrap;
-//   gap: 0.5rem;
-//   margin: 1rem 0;
-// }
-
-// .project-tag {
-//   background: rgba(58, 175, 169, 0.2);
-//   color: var(--primary);
-//   padding: 0.3rem 0.8rem;
-//   border-radius: 4px;
-//   font-size: 0.8rem;
-//   border: 1px solid rgba(58, 175, 169, 0.3);
-// }
-
-// .project-links {
-//   display: flex;
-//   gap: 1rem;
-  
-//   a {
-//     color: var(--light);
-//     text-decoration: none;
-//     font-size: 0.9rem;
-//     display: flex;
-//     align-items: center;
-//     gap: 0.3rem;
-//     transition: color 0.3s;
-    
-//     &:hover {
-//       color: var(--primary);
-//     }
-    
-//     i {
-//       font-size: 0.8rem;
-//     }
-//   }
-// }
-
-
-// .section-title {
-//     font-size: 2.5rem;
-//     margin-bottom: 3rem;
-//     text-align: center;
-//     position: relative;
-//     color: var(--primary);
-//     font-weight: 400;
-    
-//     // Remove or modify these if they're causing issues
-//     &::before {
-//         content: "<";
-//         color: var(--accent);
-//     }
-
-//     &::after {
-//         content: ">";
-//         color: var(--accent);
-//     }
-
-//     @media (max-width: var(--breakpoint-md)) {
-//         font-size: 2rem;
-//     }
-// }
 
 .section-title {
   font-size: 2.5rem;
@@ -145,14 +29,21 @@
   background: var(--code-bg);
   border-radius: 8px;
   overflow: hidden;
-  transition: transform 0.3s;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border: 1px solid rgba(58, 175, 169, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: 600px;
+  cursor: zoom-in;
+  position: relative;
 
-  &:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary);
-    box-shadow: 0 5px 15px rgba(58, 175, 169, 0.2);
-  }
+
+.project-card:hover {
+  transform: scale(1.15); /* Larger zoom */
+  border-color: var(--primary);
+  box-shadow: 0 15px 35px rgba(58, 175, 169, 0.4);
+  z-index: 100; /* Higher z-index */
+}
 
   .project-image {
     height: 200px;
@@ -235,6 +126,165 @@
   margin-left: 5px;
   animation: blink 1s infinite;
   vertical-align: middle;
+}
+
+.read-more {
+  color: #3498db;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+  margin-left: 4px;
+}
+
+.read-more:hover {
+  text-decoration: underline;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.project-card {
+  background: var(--code-bg);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s;
+  border: 1px solid rgba(58, 175, 169, 0.3);
+  display: flex;
+  flex-direction: column;
+  height: 600px; /* Fixed height for all cards */
+}
+
+/* For single image cards */
+.project-image {
+  height: 200px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(58, 175, 169, 0.3);
+  
+  flex-shrink: 0; /* Prevent shrinking */
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.5s;
+  }
+}
+
+/* For collage cards - same height as single image */
+.screenshots-wrapper {
+  position: relative;
+  width: 100%;
+  height: 200px; /* Same height as project-image */
+  overflow: hidden;
+  border-bottom: 1px solid rgba(58, 175, 169, 0.3);
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.screenshots-wrapper img {
+  position: absolute;
+  width: auto;
+  height: auto;
+  max-width: 100px; /* Smaller to fit in 200px height */
+  max-height: 120px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid white;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: all 0.4s ease;
+  cursor: zoom-in;
+  transform-origin: center center;
+}
+
+/* Adjust collage positions for smaller container */
+.screenshots-wrapper img:nth-child(1) {
+  top: 20px;
+  left: 20px;
+  transform: rotate(-10deg);
+  z-index: 1;
+}
+
+.screenshots-wrapper img:nth-child(2) {
+  top: 20px;
+  left: 80px;
+  transform: rotate(5deg);
+  z-index: 2;
+}
+
+.screenshots-wrapper img:nth-child(3) {
+  top: 70px;
+  left: 60px;
+  transform: rotate(-5deg);
+  z-index: 3;
+}
+
+.screenshots-wrapper img:nth-child(4) {
+  top: 50px;
+  left: 130px;
+  transform: rotate(8deg);
+  z-index: 4;
+}
+
+.screenshots-wrapper img:hover {
+  transform: scale(2.2) rotate(0deg) !important;
+  z-index: 100;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.5);
+  border: 2px solid var(--primary);
+}
+
+/* Project info - common for both */
+.project-info {
+  padding: 1.5rem;
+  flex: 1; /* Take remaining space */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Prevent overflow */
+}
+
+.project-info h3 {
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+  font-weight: 400;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.description-container {
+  flex: 1; /* Take available space */
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.description-container p {
+  color: var(--code-text);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* Limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.description-container.expanded p {
+  -webkit-line-clamp: unset; /* Remove limit when expanded */
+  display: block;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.project-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: auto; /* Push to bottom */
+  flex-shrink: 0; /* Prevent shrinking */
 }
 
 @keyframes blink {

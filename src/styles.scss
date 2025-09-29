@@ -1,36 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 /* Developer Color Palette */
-// :root {
-//   --primary: #3AAFA9;  /* Teal - for highlights */
-//   --secondary: #2B7A78;  /* Darker teal */
-//   --accent: #DEF2F1;  /* Light teal */
-//   --dark: #17252A;  /* Almost black */
-//   --light: #FEFFFF;  /* White */
-//   --code-bg: #1E1E1E;  /* VS Code-like background */
-//   --code-text: #D4D4D4;  /* VS Code-like text */
-// }
-
-// :root {
-//   --primary: #1E88E5;       /* Strong Blue (Primary) */
-//   --secondary: #0D47A1;     /* Deep Navy (Secondary/Dark) */
-//   --accent: #BBDEFB;        /* Soft Blue Accent */
-//   --dark: #121212;          /* Background Dark */
-//   --light: #F5F7FA;         /* Light Gray White */
-//   --code-bg: #1A1F2B;       /* VS Code-like Background */
-//   --code-text: #CFD8DC;     /* Soft White for Code */
-// }
-
-// :root {
-//   --primary: #1E88E5;      /* Blue - Trust */
-//   --secondary: #263238;    /* Slate Gray - Neutral support */
-//   --accent: #BBDEFB;       /* Light Blue - Highlight */
-//   --dark: #121212;         /* Deep dark base */
-//   --light: #F5F7FA;        /* Soft white for text */
-//   --code-bg: #1E1E2F;      /* Background for code cards */
-//   --code-text: #CFD8DC;    /* Soft readable text */
-// }
-
 :root {
+  --primary: #3AAFA9;  /* Teal - for highlights */
+  --secondary: #2B7A78;  /* Darker teal */
+  --accent: #DEF2F1;  /* Light teal */
+  --dark: #17252A;  /* Almost black */
+  --light: #FEFFFF;  /* White */
+  --code-bg: #1E1E1E;  /* VS Code-like background */
+  --code-text: #D4D4D4;  /* VS Code-like text */
+}
+
+/* Alternate theme */
+
+.alt-theme  {
   --primary: #FF6F00;      /* Confident orange */
   --secondary: #333333;    /* Deep charcoal */
   --accent: #FFE0B2;       /* Creamy orange highlight */
@@ -39,38 +21,6 @@
   --code-bg: #222831;      /* Dark neutral */
   --code-text: #F8F8F2;    /* Soft white */
 }
-
-// :root {
-//   --primary: #00f0ff;    // Electric cyan
-//   --secondary: #ff2a6d;  // Vibrant pink
-//   --accent: #05d9e8;     // Bright teal
-//   --dark: #0d0221;       // Deep navy
-//   --light: #d1f7ff;      // Ice blue
-//   --code-bg: #1a1a2e;    // Dark blue
-//   --code-text: #c3f0ff;  // Soft cyan
-// }
-
-// :root {
-//   --primary: #2ec4b6;    // Teal
-//   --secondary: #e71d36;  // Red
-//   --accent: #ff9f1c;     // Orange
-//   --dark: #011627;       // Dark blue
-//   --light: #fdfffc;      // White
-//   --code-bg: #1a2e3a;    // Dark teal
-//   --code-text: #7bdff2;  // Light cyan
-// }
-
-// :root {
-//   --primary: #268bd2;    // Blue
-//   --secondary: #2aa198;  // Cyan
-//   --accent: #d33682;     // Magenta
-//   --dark: #002b36;       // Dark teal
-//   --light: #eee8d5;      // Cream
-//   --code-bg: #073642;    // Darker teal
-//   --code-text: #93a1a1;  // Grayish blue
-// }
-
-
 
 
 * {
@@ -86,19 +36,7 @@ body {
   line-height: 1.6;
 }
 
-/* Terminal-like navigation */
-// nav {
-//   display: flex;
-//   justify-content: space-between;
-//   align-items: center;
-//   padding: 1.5rem 5%;
-//   position: fixed;
-//   width: 100%;
-//   top: 0;
-//   z-index: 100;
-//   background-color: rgba(23, 37, 42, 0.95);
-//   border-bottom: 1px solid var(--primary);
-// }
+
 
 
 nav {

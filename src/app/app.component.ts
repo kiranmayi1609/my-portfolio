@@ -8,6 +8,7 @@ import { ProjectsComponent } from "./components/projects/projects.component";
 import { ExperienceComponent } from "./components/experience/experience.component";
 import { JourneyComponent } from "./components/journey/journey.component";
 import { FooterComponent } from "./components/footer/footer.component";
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 @Component({

@@ -1,8 +1,11 @@
 
-<section class="home">
+<section class="home mat-elevation-z4">
     <div class="home-content">
         <h1>{{ currentPhrase }}<span class="cursor"></span></h1>
         <p>Full-stack developer specializing in Angualr , .Net , and cloud technologies</p>
-        <a router="/projects" class="cta-button">viewProjects()</a>
+        <a (click)="scrollToSection('projects')" class="cta-button">viewProjects()</a>
+         <a href="/CV.pdf"  class="cta-button " download="My_CV.pdf">
+        downloadCV()
+      </a>
     </div>
 </section>

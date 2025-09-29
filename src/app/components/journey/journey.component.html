@@ -1,39 +1,63 @@
-<!-- <section class="journey-section">
-  <h2 class="section-title">My Journey<span class="cursor"></span></h2>
-  
-  <div class="timeline">
-    <div class="timeline-line"></div>
-    
-    <div 
-      *ngFor="let event of timelineEvents; let i = index" 
-      class="timeline-event"
-      [class.active]="activeIndex === i"
-      [class.work]="event.type === 'work'"
-      [class.education]="event.type === 'education'"
-      [class.milestone]="event.type === 'milestone'"
-      (click)="setActive(i)"
-    >
-      <div class="event-icon">{{ event.icon }}</div>
-      <div class="event-year">{{ event.year }}</div>
-      <div class="event-content">
-        <h3>{{ event.title }}</h3>
-        <p>{{ event.description }}</p>
-      </div>
-    </div>
-  </div>
-</section> -->
 
+
+
+
+<!-- Creative View -->
 <section id="journey">
   <h2 class="section-title">My Journey<span class="cursor"></span></h2>
 
-  <div class="roadmap">
-    <div class="roadmap-item" *ngFor="let step of timeline; let i = index" [ngClass]="{ 'left': i % 2 === 0, 'right': i % 2 !== 0 }">
-      <div class="content">
-        <h3>{{ step.year }}</h3>
-        <h4>{{ step.title }}</h4>
-        <p>{{ step.description }}</p>
+  <!-- Journey Container -->
+  <div class="journey-container">
+  <div id="creative-view" class="creative-view">
+    <div class="journey-path">
+      <div class="path-line"></div>
+
+      <!-- Milestone 1 -->
+      <div class="milestone" style="left: 10%;">
+        <i class="fas fa-laptop-code"></i>
+        <div class="milestone-detail top">
+          <h3>BSc Computer Science (2006-2009)</h3>
+          <p>Built foundation in programming and software development.</p>
+        </div>
       </div>
+
+      <!-- Milestone 2 -->
+      <div class="milestone" style="left: 30%;">
+        <i class="fas fa-chart-line"></i>
+        <div class="milestone-detail bottom">
+          <h3>MBA (2009-2011)</h3>
+          <p>Developed business acumen and strategic thinking skills.</p>
+        </div>
+      </div>
+
+      <!-- Milestone 3 -->
+     <!-- Milestone 3 -->
+<div class="milestone" style="left: 50%;">
+  <i class="fas fa-heart"></i>
+  <div class="milestone-detail top">
+    <h3>Family, Growth & Learning (2011-2021)</h3>
+    <p>Developed planning, patience, and adaptability skills while caring for family.</p>
+ 
+  </div>
+</div>
+
+      <!-- Milestone 4 -->
+ <!-- Milestone 4 -->
+<div class="milestone" style="left: 60%; bottom:10%">
+  <i class="fas fa-graduation-cap"></i>
+  <div class="milestone-detail bottom">
+    <h3>Tech Education (2021-2026)</h3>
+    <p>Pursuing technical education with focus on programming, web development, and data communication. Learning Angular, Web API development, and advanced programming concepts as part of the curriculum.</p>
+  </div>
+</div>
+
+
     </div>
   </div>
+  </div>
 </section>
+
+
+
+
 

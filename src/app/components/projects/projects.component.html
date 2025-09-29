@@ -1,25 +1,4 @@
-<!-- <h2 class="section-title">Projects<span class="cursor"></span></h2>
-<div class="projects-grid">
-  <div class="project-card" *ngFor="let project of projects">
-    <div class="project-image">
-      <img [src]="project.image" [alt]="project.title">
-    </div>
-    <div class="project-info">
-      <h3>{{project.title}}</h3>
-      <p>{{project.description}}</p>
-      <div class="project-tags">
-        <span class="project-tag" *ngFor="let tag of project.tags">{{tag}}</span>
-      </div>
-      <div class="project-links">
-        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-        <a href="#"><i class="fab fa-github"></i> Source</a>
-      </div>
-    </div>
-  </div>
-
-</div> -->
-
-<section id="projects">
+<!-- <section>
   <h2 class="section-title">Projects<span class="cursor"></span></h2>
 
   <div class="projects-grid">
@@ -44,5 +23,94 @@
       </div>
     </div>
   </div>
-</section>
+</section>  -->
 
+<section id="projects">
+  <h2 class="section-title">Projects<span class="cursor"></span></h2>
+
+  <!-- <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects; let i = index">
+      <div class="project-image">
+        <img [src]="project.imageUrl" [alt]="project.title" />
+      </div>
+      <div class="project-info">
+        <h3>{{ project.title }}</h3>
+        <div class="description-container" [class.expanded]="expandedProjects[i]">
+          <p>
+            {{ expandedProjects[i] ? project.description : (project.description | slice:0:150) }}
+            <span *ngIf="project.description.length > 150" 
+                  class="read-more" 
+                  (click)="toggleReadMore(i)">
+              {{ expandedProjects[i] ? ' Read Less' : '... Read More' }}
+            </span>
+          </p>
+        </div>
+        <div class="project-tags">
+          <span class="project-tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+        </div>
+        <div class="project-links">
+          <a [href]="project.liveLink" target="_blank" class="link-button">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a>
+          <a [href]="project.sourceLink" target="_blank" class="link-button">
+            <i class="fab fa-github"></i> Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+ <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects; let i = index">
+
+      <!-- CASE 1: Single image -->
+      <div *ngIf="project.type === 'single'" class="project-image">
+        <img [src]="project.imageUrl" [alt]="project.title" />
+      </div>
+
+      <!-- CASE 2: Collage of 4 screenshots -->
+   <div *ngIf="project.type === 'collage'" class="screenshots-wrapper">
+  <img [src]="project.screenshots?.[0] || ''" alt="s1" />
+  <img [src]="project.screenshots?.[1] || ''" alt="s2" />
+  <img [src]="project.screenshots?.[2] || ''" alt="s3" />
+  <img [src]="project.screenshots?.[3] || ''" alt="s4" />
+</div>
+
+      <!-- Project info (common for both types) -->
+      <div class="project-info">
+        <h3>{{ project.title }}</h3>
+        <div class="description-container" [class.expanded]="expandedProjects[i]">
+          <p>
+            {{ expandedProjects[i] ? project.description : (project.description | slice:0:150) }}
+            <span *ngIf="project.description.length > 250"
+                  class="read-more"
+                  (click)="toggleReadMore(i)">
+              {{ expandedProjects[i] ? ' Read Less' : '... Read More' }}
+            </span>
+          </p>
+        </div>
+         <div *ngIf="project.documentation">
+  <button (click)="toggleDocumentation(i)">
+    {{ showDocumentation[i] ? 'Hide Documentation' : 'Show Documentation' }}
+  </button>
+  <div *ngIf="showDocumentation[i]" class="documentation">
+    <pre>{{ project.documentation }}</pre>
+  </div>
+</div>
+
+        <div class="project-tags">
+          <span class="project-tag" *ngFor="let tag of project.tags">{{ tag }}</span>
+        </div>
+        <div class="project-links">
+          <!-- <a [href]="project.liveLink" target="_blank" class="link-button">
+            <i class="fas fa-external-link-alt"></i> Live Demo
+          </a> -->
+          <a [href]="project.sourceLink" target="_blank" class="link-button">
+            <i class="fab fa-github"></i> Source
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>

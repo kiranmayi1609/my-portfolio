@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -10,11 +11,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  
+
 phrases = [
     'Kiranmayi',
-    'a Developer',
-    'a Problem Solver',
-    'a Tech Enthusiast'
+    'Dev + Data ',
+    'Full Stack (Passion +Patience)',
+    'Debugging Reality',
+    'Building pixels & pipelines with .Net+ Angular ',
   ];
   currentPhrase = '';
   phraseIndex = 0;
@@ -27,6 +31,15 @@ phrases = [
   ngOnInit(): void {
     setTimeout(() => this.typeWriter(), 1000);
   }
+
+downloadFile() {
+  const link = document.createElement('a');
+  link.href = 'public/CV.pdf';          // Correct path
+  link.download = 'My_CV.pdf';          // File name when saved
+  link.target = '_blank';               // Open in new tab
+  link.click();
+}
+  
 
   typeWriter() {
     this.isEnd = false;
@@ -51,6 +64,12 @@ phrases = [
     } else {
       const speed = this.isDeleting ? this.deletingSpeed : this.typingSpeed;
       setTimeout(() => this.typeWriter(), this.isEnd ? speed * 2 : speed);
+    }
+  }
+  scrollToSection(sectionId: string) {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
     }
   }
 }

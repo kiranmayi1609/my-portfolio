@@ -19,34 +19,33 @@ skills = [
     'Azure', 'Docker', 'SQL', 'DuckDB', 'Bigdata', 'Git', 'CI/CD'
   ];
 
-  certifications = [
+Security_skills = {
+  programming: ["JavaScript", "TypeScript", "Python", "Java"],
+  security: ["Authentication", "Authorization", "OAuth 2.0", "JWT"]
+};
+ highlights = [
     {
-      title: 'AWS Certified Solutions Architect',
-      provider: 'Amazon Web Services',
-      date: 'Issued May 2023',
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Amazon_Web_Services_Logo.svg/1200px-Amazon_Web_Services_Logo.svg.png',
-      link: '#'
+      label: 'Frontend',
+      percent: 80,
+      description: 'JavaScript, TypeScript, Angular, React Native'
     },
     {
-      title: 'Advanced React and Redux',
-      provider: 'Udemy',
-      date: 'Completed Jan 2023',
-      logo: 'https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg',
-      link: '#'
+      label: 'Backend',
+      percent: 70,
+      description: 'Node.js, .NET, SQL, REST APIs'
     },
     {
-      title: 'Microservices with Node.js and React',
-      provider: 'Udemy',
-      date: 'Completed Nov 2022',
-      logo: 'https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg',
-      link: '#'
+      label: 'Data & Cloud',
+      percent: 90,
+      description: 'Python, Azure, Big Data, Docker'
     },
     {
-      title: 'Angular Advanced Concepts',
-      provider: 'Frontend Masters',
-      date: 'Completed Sep 2022',
-      logo: 'https://static.frontendmasters.com/assets/fm/icons/favicon-32x32.png',
-      link: '#'
+      label: 'Tools',
+      percent: 85,
+      description: 'Git, CI/CD, Linux, Windows'
     }
   ];
+
+  // Circle circumference (2πr, with r=54)
+  circumference = 2 * Math.PI * 54;
 }
