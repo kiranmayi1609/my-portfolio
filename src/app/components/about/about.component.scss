@@ -1,201 +1,442 @@
 
+/* ==============================
+   ABOUT SECTION
+================================ */
+
+.about-section {
+  position: relative;
+  padding: 100px 7%;
+  background: #080D1A;
+  color: #E2E8F0;
+  overflow: hidden;
+  scroll-margin-top: 85px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.about-container {
+  max-width: 1250px;
+  margin: 0 auto;
+}
+
+/* ==============================
+   SECTION HEADING
+================================ */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 65px;
+}
+
+.section-subtitle {
+  display: inline-block;
+  color: #FF6F00;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.9rem;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  color: #FFFFFF;
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.section-title span:first-child {
+  color: #00D9FF;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  height: 35px;
+  margin-left: 6px;
+  background: #FF6F00;
+  vertical-align: middle;
+  animation: blink 0.8s infinite;
+}
+
+.heading-line {
+  width: 75px;
+  height: 4px;
+  margin: 18px auto 0;
+  background: linear-gradient(90deg, #00D9FF, #FF6F00);
+  border-radius: 10px;
+}
+
+/* ==============================
+   MAIN CONTENT
+================================ */
 
 .about-content {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 35px;
+  align-items: start;
+}
+
+.about-text,
+.about-sidebar {
   display: flex;
-  gap: 3rem;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  gap: 28px;
+  min-width: 0;
 }
 
-.about-text {
-  flex: 1;
-  background: var(--code-bg);
-  padding: 2rem;
-  border-radius: 8px;
-  border-left: 4px solid var(--primary);
-  
-  h1 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    color: var(--light);
-  }
-  
-  p {
-    color: var(--code-text);
-    margin-bottom: 1rem;
-    line-height: 1.6;
-  }
-  
-  .highlight {
-    color: var(--accent);
-    font-weight: 600;
-  }
-  
-  ul {
-    margin: 1.5rem 0 1.5rem 1.5rem;
-    color: var(--code-text);
-    
-    li {
-      margin-bottom: 0.8rem;
-      line-height: 1.5;
-    }
-  }
+/* ==============================
+   INTRO CARD
+================================ */
+
+.intro-card {
+  background: #1E293B;
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  border-radius: 16px;
+  padding: 30px;
+  transition: all 0.3s ease;
 }
 
-.approach {
-  margin-top: 2rem;
-  
-  h3 {
-    color: var(--light);
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-  }
+.intro-card:hover {
+  border-color: #00D9FF;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.08);
 }
 
-.approach-item {
+.intro-card h3 {
+  color: #00D9FF;
+  font-size: 1.5rem;
+  margin: 0 0 20px;
+}
+
+.intro-card p {
+  color: #CBD5E1;
+  font-size: 0.95rem;
+  line-height: 1.9;
+  margin-bottom: 15px;
+}
+
+.intro-card p:last-child {
+  margin-bottom: 0;
+}
+
+.intro-card strong {
+  color: #FF9A3D;
+  font-weight: 600;
+}
+
+/* ==============================
+   SUBSECTION HEADINGS
+================================ */
+
+.subsection-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.subsection-heading h3 {
+  color: #00D9FF;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.heading-icon {
+  color: #FF6F00;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.35rem;
+  font-weight: bold;
+}
+
+/* ==============================
+   MY APPROACH
+================================ */
+
+.approach-section {
+  padding: 10px 0;
+}
+
+.approach-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.approach-card {
   display: flex;
   align-items: flex-start;
-  margin-bottom: 1rem;
-  color: var(--code-text);
-  line-height: 1.5;
-  
-  svg {
-    margin-right: 0.8rem;
-    color: var(--accent);
-    min-width: 20px;
-    margin-top: 0.2rem;
-  }
-  
-  strong {
-    color: var(--accent);
-  }
+  gap: 18px;
+  padding: 20px;
+  background: #1E293B;
+  border: 1px solid rgba(255, 111, 0, 0.18);
+  border-left: 3px solid #FF6F00;
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
-.skills {
-  flex: 1;
-  background: var(--code-bg);
-  padding: 2rem;
-  border-radius: 8px;
-  border-left: 4px solid var(--accent);
-  align-self: flex-start;
-  
-  h3 {
-    color: var(--accent);
-    margin-bottom: 1.5rem;
-    font-weight: 400;
-    
-    .cursor {
-      display: inline-block;
-      width: 8px;
-      height: 1.2rem;
-      background-color: var(--accent);
-      animation: blink 1s step-end infinite;
-      vertical-align: middle;
-      margin-left: 5px;
-    }
-  }
+.approach-card:hover {
+  transform: translateX(6px);
+  border-color: #FF6F00;
+  background: #243247;
 }
 
+.approach-number {
+  color: #FF6F00;
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  font-weight: 700;
+  min-width: 30px;
+  padding-top: 2px;
+}
 
+.approach-info h4 {
+  color: #FFFFFF;
+  font-size: 1.05rem;
+  margin: 0 0 8px;
+}
+
+.approach-info p {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ==============================
+   SIDEBAR CARDS
+================================ */
+
+.sidebar-card {
+  background: #1E293B;
+  border: 1px solid rgba(0, 217, 255, 0.15);
+  border-radius: 16px;
+  padding: 28px;
+  transition: all 0.3s ease;
+}
+
+.sidebar-card:hover {
+  border-color: rgba(0, 217, 255, 0.5);
+  box-shadow: 0 10px 30px rgba(0, 217, 255, 0.06);
+}
+
+/* ==============================
+   TECHNICAL SKILLS
+================================ */
+
+.skill-groups {
+  display: flex;
+  flex-direction: column;
+  gap: 23px;
+}
+
+.skill-group h4 {
+  color: #FFFFFF;
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin: 0 0 12px;
+}
 
 .skills-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.8rem;
+  gap: 9px;
 }
 
 .skill-tag {
-  background: rgba(255, 111, 0, 0.1);
-  color: var(--primary);
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  font-size: 0.9rem;
-  border: 1px solid var(--primary);
-}
-
-/* Highlights Section */
-.highlights {
-  margin-top: 3rem;
-  text-align: center;
-}
-
-.highlights h3 {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  color: #f5d67b; /* matches your yellow heading */
-}
-
-.highlights-design-1 {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 3rem; /* more spacing between circles */
-}
-
-.highlight-circle {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
-  width: 180px; /* slightly wider for balance */
-  padding: 1rem;
-  background: #1e1e1e; /* subtle card effect */
-  border-radius: 12px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 8px 12px;
+  color: #00D9FF;
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: 8px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  transition: all 0.3s ease;
 }
 
-.highlight-circle:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+.skill-tag:hover {
+  color: #080D1A;
+  background: #00D9FF;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 217, 255, 0.2);
 }
 
-.circle-container {
-  position: relative;
-  width: 120px;
-  height: 120px;
-  margin-bottom: 1rem;
+/* ==============================
+   DEVELOPMENT FOCUS
+================================ */
+
+.highlights-card .subsection-heading h3 {
+  color: #FF9A3D;
 }
 
-.circle-bg {
-  fill: none;
-  stroke: #444;
-  stroke-width: 10;
+.highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
 }
 
-.circle-progress {
-  fill: none;
-  stroke: #ff7300; /* orange highlight */
-  stroke-width: 10;
-  stroke-linecap: round;
-  transform: rotate(-90deg);
-  transform-origin: center;
-  transition: stroke-dashoffset 1s ease-out;
-}
-
-.circle-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: bold;
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-.circle-label {
-  margin-top: 0.5rem;
-  font-weight: bold;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.highlight-circle p {
-  margin-top: 0.3rem;
-  font-size: 0.9rem;
-  color: #bbb;
+.highlight-item {
   text-align: center;
-  line-height: 1.4;
+  min-width: 0;
+  padding: 20px 12px;
+  background: rgba(8, 13, 26, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 12px;
+  transition: all 0.3s ease;
 }
 
+.highlight-item:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 111, 0, 0.5);
+}
 
+.focus-icon {
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+}
 
+.highlight-item h4 {
+  color: #00D9FF;
+  font-size: 0.95rem;
+  margin: 0 0 9px;
+}
 
+.highlight-item:nth-child(even) h4 {
+  color: #FF9A3D;
+}
 
+.highlight-item p {
+  color: #94A3B8;
+  font-size: 0.78rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==============================
+   ANIMATIONS
+================================ */
+
+@keyframes blink {
+  0%, 49% {
+    opacity: 1;
+  }
+
+  50%, 100% {
+    opacity: 0;
+  }
+}
+
+/* ==============================
+   TABLET RESPONSIVE
+================================ */
+
+@media (max-width: 1024px) {
+  .about-section {
+    padding: 85px 5%;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .intro-card,
+  .sidebar-card {
+    padding: 22px;
+  }
+
+  .highlights-grid {
+    gap: 12px;
+  }
+}
+
+/* ==============================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 75px 5%;
+  }
+
+  .section-heading {
+    margin-bottom: 40px;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .about-text,
+  .about-sidebar {
+    gap: 25px;
+  }
+
+  .intro-card,
+  .sidebar-card {
+    padding: 22px;
+  }
+
+  .approach-card {
+    padding: 17px;
+  }
+
+  .subsection-heading h3 {
+    font-size: 1.25rem;
+  }
+}
+
+/* ==============================
+   SMALL MOBILE
+================================ */
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 65px 4%;
+  }
+
+  .section-title {
+    font-size: 1.9rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.78rem;
+  }
+
+  .intro-card,
+  .sidebar-card {
+    padding: 18px;
+  }
+
+  .intro-card p {
+    font-size: 0.9rem;
+  }
+
+  .highlights-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .highlight-item {
+    padding: 16px 9px;
+  }
+
+  .highlight-item p {
+    font-size: 0.72rem;
+  }
+
+  .skill-tag {
+    padding: 8px 10px;
+    font-size: 0.72rem;
+  }
+
+  .approach-card {
+    gap: 12px;
+  }
+}

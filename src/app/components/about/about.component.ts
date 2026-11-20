@@ -1,51 +1,97 @@
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FooterComponent } from "../footer/footer.component";
 
 @Component({
   selector: 'app-about',
   standalone: true,
-  imports: [CommonModule, FooterComponent],
+  imports: [CommonModule],
   templateUrl: './about.component.html',
   styleUrl: './about.component.scss'
 })
 export class AboutComponent {
-  //  skills = [
-  //   'JavaScript', 'TypeScript', 'React', 'Node.js', 'Python',
-  //   'AWS', 'Docker', 'SQL', 'MongoDB', 'GraphQL', 'Git', 'CI/CD'
-  // ];
-skills = [
-    'JavaScript', 'TypeScript', 'Angular', 'native Reactive', 'Node.js', 'Python',
-    'Azure', 'Docker', 'SQL', 'DuckDB', 'Bigdata', 'Git', 'CI/CD'
-  ];
 
-Security_skills = {
-  programming: ["JavaScript", "TypeScript", "Python", "Java"],
-  security: ["Authentication", "Authorization", "OAuth 2.0", "JWT"]
-};
- highlights = [
+  skillGroups = [
     {
-      label: 'Frontend',
-      percent: 80,
-      description: 'JavaScript, TypeScript, Angular, React Native'
+      category: 'Programming Languages',
+      skills: [
+        'C#',
+        'Java',
+        'JavaScript',
+        'TypeScript',
+        'SQL',
+        'Python'
+      ]
     },
     {
-      label: 'Backend',
-      percent: 70,
-      description: 'Node.js, .NET, SQL, REST APIs'
+      category: 'Backend & APIs',
+      skills: [
+        '.NET',
+        'ASP.NET Web API',
+        'REST APIs',
+        'Spring Boot (Basic)'
+      ]
     },
     {
-      label: 'Data & Cloud',
-      percent: 90,
-      description: 'Python, Azure, Big Data, Docker'
+      category: 'Frontend & Mobile',
+      skills: [
+        'Angular',
+        'React (Training)',
+        'React Native',
+        'Android Development'
+      ]
     },
     {
-      label: 'Tools',
-      percent: 85,
-      description: 'Git, CI/CD, Linux, Windows'
+      category: 'Databases',
+      skills: [
+        'SQL Server',
+        'PostgreSQL (Neon)',
+        'Firebase Firestore'
+      ]
+    },
+    {
+      category: 'Data Technologies',
+      skills: [
+        'Hadoop',
+        'HDFS',
+        'PySpark',
+        'Apache Kafka',
+        'CSV Data Workflows'
+      ]
+    },
+    {
+      category: 'Libraries & Tools',
+      skills: [
+        'TanStack Query',
+        'Zod',
+        'Git',
+        'GitHub',
+        'Microsoft Excel'
+      ]
     }
   ];
 
-  // Circle circumference (2πr, with r=54)
-  circumference = 2 * Math.PI * 54;
+  developmentFocus = [
+    {
+      icon: '🌐',
+      title: 'Web Development',
+      description: 'Building frontend and backend web applications.'
+    },
+    {
+      icon: '📱',
+      title: 'Mobile Apps',
+      description: 'Developing mobile applications with React Native.'
+    },
+    {
+      icon: '⚙️',
+      title: 'Backend & APIs',
+      description: 'Working with C#, ASP.NET Web API and REST APIs.'
+    },
+    {
+      icon: '📊',
+      title: 'Data Processing',
+      description: 'Exploring Kafka, Hadoop and PySpark workflows.'
+    }
+  ];
+
 }

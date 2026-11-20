@@ -1,30 +1,59 @@
-<footer>
+<footer class="footer-section">
   <div class="footer-content">
+
+    <!-- Logo / Intro -->
+    <div class="footer-brand">
+      <h3>Kiranmayi<span>.</span></h3>
+      <p>Building pixels & pipelines with passion.</p>
+    </div>
+
+    <!-- Social Links -->
     <div class="social-links">
-      <a 
-        *ngFor="let link of socialLinks" 
-        [href]="link.url" 
-        target="_blank" 
+      <a
+        *ngFor="let link of socialLinks"
+        [href]="link.url"
+        target="_blank"
         rel="noopener noreferrer"
-        [attr.aria-label]="link.icon"
+        [attr.aria-label]="link.label"
+        [title]="link.label"
       >
-        <i class="fab fa-{{link.icon}}"></i>
+        <i [class]="link.icon"></i>
       </a>
     </div>
-    
-    <div class="footer-nav">
-      <a routerLink="/">Home</a>
-      <a routerLink="/about">About</a>
-      <a routerLink="/journey">Journey</a>
-      <a routerLink="/projects">Projects</a>
-      <a routerLink="/contact">Contact</a>
-    </div>
-    
+
+    <!-- Footer Navigation -->
+    <nav class="footer-nav" aria-label="Footer navigation">
+      <a
+        *ngFor="let item of footerLinks"
+        [href]="'#' + item.id"
+        (click)="scrollToSection($event, item.id)"
+      >
+        {{ item.label }}
+      </a>
+    </nav>
+
+    <div class="footer-divider"></div>
+
+    <!-- Copyright -->
     <div class="copyright">
       <p>
-        /* &copy; {{currentYear}} <span class="highlight">Kiranmayi Tummala </span> - 
-        <span class="code-style">All code rights reserved</span> */ 
+        <span class="code-comment">/*</span>
+        &copy; {{ currentYear }}
+        <span class="highlight">Kiranmayi Tummala</span>
+        <span class="code-comment">-</span>
+        <span class="code-style">All rights reserved.</span>
+        <span class="code-comment">*/</span>
       </p>
     </div>
+
+    <button
+      type="button"
+      class="back-to-top"
+      (click)="scrollToTop()"
+    >
+      <i class="fas fa-arrow-up"></i>
+      Back to top
+    </button>
+
   </div>
 </footer>

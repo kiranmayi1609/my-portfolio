@@ -1,63 +1,65 @@
-
-
-
-
-<!-- Creative View -->
-<section id="journey">
-  <h2 class="section-title">My Journey<span class="cursor"></span></h2>
-
-  <!-- Journey Container -->
+<section id="journey" class="journey-section">
   <div class="journey-container">
-  <div id="creative-view" class="creative-view">
-    <div class="journey-path">
-      <div class="path-line"></div>
 
-      <!-- Milestone 1 -->
-      <div class="milestone" style="left: 10%;">
-        <i class="fas fa-laptop-code"></i>
-        <div class="milestone-detail top">
-          <h3>BSc Computer Science (2006-2009)</h3>
-          <p>Built foundation in programming and software development.</p>
+    <div class="section-header">
+      <span class="section-label">MY STORY / 01</span>
+      <h2>My <span>Journey</span></h2>
+      <p>
+        Every step has shaped my learning, personal growth,
+        and journey into technology.
+      </p>
+    </div>
+
+    <div class="roadmap">
+
+      <div class="roadmap-line"></div>
+
+      <article
+        class="roadmap-item"
+        *ngFor="let milestone of milestones; let i = index"
+        [class.roadmap-item-up]="i % 2 === 0"
+        [class.roadmap-item-down]="i % 2 !== 0"
+      >
+
+        <div class="roadmap-content">
+
+          <div class="roadmap-card">
+
+            <div class="card-top">
+              <span class="milestone-number">
+                0{{ i + 1 }}
+              </span>
+
+              <span class="milestone-period">
+                {{ milestone.period }}
+              </span>
+            </div>
+
+            <div class="milestone-icon">
+              <i [class]="milestone.icon"></i>
+            </div>
+
+            <h3>{{ milestone.title }}</h3>
+
+            <p>{{ milestone.description }}</p>
+
+          </div>
+
         </div>
-      </div>
 
-      <!-- Milestone 2 -->
-      <div class="milestone" style="left: 30%;">
-        <i class="fas fa-chart-line"></i>
-        <div class="milestone-detail bottom">
-          <h3>MBA (2009-2011)</h3>
-          <p>Developed business acumen and strategic thinking skills.</p>
+        <div class="roadmap-stop">
+          <span>{{ i + 1 }}</span>
         </div>
-      </div>
 
-      <!-- Milestone 3 -->
-     <!-- Milestone 3 -->
-<div class="milestone" style="left: 50%;">
-  <i class="fas fa-heart"></i>
-  <div class="milestone-detail top">
-    <h3>Family, Growth & Learning (2011-2021)</h3>
-    <p>Developed planning, patience, and adaptability skills while caring for family.</p>
- 
-  </div>
-</div>
-
-      <!-- Milestone 4 -->
- <!-- Milestone 4 -->
-<div class="milestone" style="left: 60%; bottom:10%">
-  <i class="fas fa-graduation-cap"></i>
-  <div class="milestone-detail bottom">
-    <h3>Tech Education (2021-2026)</h3>
-    <p>Pursuing technical education with focus on programming, web development, and data communication. Learning Angular, Web API development, and advanced programming concepts as part of the curriculum.</p>
-  </div>
-</div>
-
+      </article>
 
     </div>
-  </div>
+
+    <div class="journey-footer">
+      <span class="footer-line"></span>
+      <p>Learning, growing and moving forward.</p>
+      <span class="footer-line"></span>
+    </div>
+
   </div>
 </section>
-
-
-
-
-

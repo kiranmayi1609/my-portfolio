@@ -1,91 +1,155 @@
 
+<section class="about-section" id="about">
+  <div class="about-container">
 
+    <!-- Section Heading -->
+    <div class="section-heading">
+      <span class="section-subtitle">// get to know me</span>
+      <h2 class="section-title">
+        About <span>Me</span><span class="cursor"></span>
+      </h2>
+      <div class="heading-line"></div>
+    </div>
 
-<section id="about">
-  <h2 class="section-title">
-    <span class="bracket">&lt;</span>
-    About
-    <span class="cursor"></span>
-    <span class="bracket">&gt;</span>
-  </h2>
-  
-  <div class="about-content">
-    <div class="about-text animated delay-1">
-    
-      <h1>Full-Stack Developer & Data Enthusiast</h1>
-      <p>I'm a passionate <span class="highlight">TEC student</span> specializing in <span class="highlight">Data + Communication</span>, with hands-on experience in:</p>
-     
-      <ul>
-        <li><span class="highlight">Full-stack development</span>: C#, Angular, .NET</li>
-        <li><span class="highlight">Mobile development</span>: React Native (cross-platform)</li>
-        <li><span class="highlight">Data/Cloud</span>: Big Data (Kafka), Linux/Windows environments</li>
-      </ul>
+    <!-- Main About Content -->
+    <div class="about-content">
 
-       <div class="approach">
-        <h3>My Approach</h3>
-        <div class="approach-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-          <span><strong>Deep-dive learning</strong> – Strong fundamentals first for faster problem-solving</span>
+      <!-- Left Side -->
+      <div class="about-text">
+
+        <!-- Introduction -->
+        <div class="intro-card">
+          <h3>Who Am I?</h3>
+
+          <p>
+            I'm a <strong>Computer Science graduate</strong> with practical
+            experience in backend and application development through
+            individual projects and software development training.
+          </p>
+
+          <p>
+            I have worked with <strong>C#, ASP.NET Web API, Angular
+            and relational databases</strong> to build web applications.
+            I have also developed a mobile application using
+            <strong>React Native and Firebase</strong>.
+          </p>
+
+          <p>
+            My interests include <strong>backend development, REST APIs,
+            mobile applications and data integration</strong>.
+            I also have experience exploring technologies such as
+            Apache Kafka, Hadoop and PySpark.
+          </p>
+
+          <p>
+            Currently, I'm expanding my web development knowledge through
+            the <strong>ReDI School Web Development with Generative AI
+            programme</strong>, while continuing to improve my skills
+            and build practical projects.
+          </p>
         </div>
-        <div class="approach-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-          <span><strong>Adaptive multitasker</strong> – Thrive in fast-paced tech environments</span>
-        </div>
-        <div class="approach-item">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-            <polyline points="22 4 12 14.01 9 11.01"></polyline>
-          </svg>
-          <span><strong>Theory → Practice</strong> – Learn by building, debugging, and optimizing pipelines</span>
+
+        <!-- My Approach -->
+        <div class="approach-section">
+          <div class="subsection-heading">
+            <span class="heading-icon">&lt;/&gt;</span>
+            <h3>My Approach</h3>
+          </div>
+
+          <div class="approach-list">
+
+            <div class="approach-card">
+              <div class="approach-number">01</div>
+              <div class="approach-info">
+                <h4>Continuous Learning</h4>
+                <p>
+                  I enjoy learning new technologies, strengthening
+                  my fundamentals and understanding how software
+                  systems work.
+                </p>
+              </div>
+            </div>
+
+            <div class="approach-card">
+              <div class="approach-number">02</div>
+              <div class="approach-info">
+                <h4>Problem Solving</h4>
+                <p>
+                  I approach challenges analytically, break problems
+                  into smaller steps and work towards practical solutions.
+                </p>
+              </div>
+            </div>
+
+            <div class="approach-card">
+              <div class="approach-number">03</div>
+              <div class="approach-info">
+                <h4>Learning by Building</h4>
+                <p>
+                  I believe in applying knowledge through projects,
+                  experimenting with technologies, debugging and
+                  improving my work.
+                </p>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-     
 
-       <div class="skills">
-        <h3>Technical Skills<span class="cursor"></span></h3>
-        <div class="skills-list">
-          <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
+      <!-- Right Side -->
+      <div class="about-sidebar">
+
+        <!-- Technical Skills -->
+        <div class="sidebar-card skills-card">
+          <div class="subsection-heading">
+            <span class="heading-icon">&lt;/&gt;</span>
+            <h3>Technical Skills</h3>
+          </div>
+
+          <div class="skill-groups">
+
+            <div class="skill-group" *ngFor="let group of skillGroups">
+              <h4>{{ group.category }}</h4>
+
+              <div class="skills-list">
+                <span
+                  class="skill-tag"
+                  *ngFor="let skill of group.skills">
+                  {{ skill }}
+                </span>
+              </div>
+            </div>
+
+          </div>
         </div>
-      </div>
-      
-    </div>
-   <!-- Highlights Section -->
-<div class="skills">
-  <h3>Highlights<span class="cursor"></span></h3>
-   <div class="highlights-design-1">
-      <div
-        class="highlight-circle"
-        *ngFor="let h of highlights"
-      >
-        <div class="circle-container">
-          <svg width="120" height="120" viewBox="0 0 120 120">
-            <circle class="circle-bg" cx="60" cy="60" r="54"></circle>
-            <circle
-              class="circle-progress"
-              cx="60"
-              cy="60"
-              r="54"
-              [attr.stroke-dasharray]="circumference"
-              [attr.stroke-dashoffset]="circumference - (h.percent / 100) * circumference"
-            ></circle>
-          </svg>
-          <div class="circle-text">{{ h.percent }}%</div>
+
+        <!-- Development Focus -->
+        <div class="sidebar-card highlights-card">
+          <div class="subsection-heading">
+            <span class="heading-icon">✦</span>
+            <h3>Development Focus</h3>
+          </div>
+
+          <div class="highlights-grid">
+
+            <div
+              class="highlight-item"
+              *ngFor="let item of developmentFocus">
+
+              <div class="focus-icon">
+                {{ item.icon }}
+              </div>
+
+              <h4>{{ item.title }}</h4>
+              <p>{{ item.description }}</p>
+
+            </div>
+
+          </div>
         </div>
-        <div class="circle-label">{{ h.label }}</div>
-        <p>{{ h.description }}</p>
+
       </div>
     </div>
-  <!-- <div class="skills-list">
-    <span class="skill-tag" *ngFor="let skill of skills">{{ skill }}</span>
-  </div>   -->
-</div>
+  </div>
 </section>
-
-

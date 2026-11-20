@@ -1,14 +1,55 @@
-<section id="experience">
-<h2 class="section-title">Experience <span class="cursor"></span></h2>
 
-<div class="experience-item" *ngFor="let exp of experiences">
-  <div class="experience-header">
-    <h3 class="experience-title">{{exp.title}}</h3>
-    <span class="experience-date">{{exp.date}}</span>
+<section id="experience" class="experience-section">
+  <div class="experience-container">
+
+    <div class="section-header">
+      <span class="section-label">MY JOURNEY</span>
+
+      <h2>My <span>Experience</span></h2>
+
+      <p>
+        My professional background and practical software
+        development learning journey.
+      </p>
+    </div>
+
+    <div class="experience-grid">
+
+      <article
+        class="experience-card"
+        *ngFor="let exp of experiences; let i = index"
+      >
+
+        <div class="experience-toggle">
+
+          <span class="year-box">
+            {{ exp.year }}
+          </span>
+
+          <span class="experience-heading">
+            <strong>{{ exp.title }}</strong>
+            <small class="experience-type">{{ exp.type }}</small>
+            <small class="experience-location">
+              {{ exp.company }}
+            </small>
+          </span>
+
+        </div>
+
+        <div class="experience-details">
+
+          <div class="details-date">{{ exp.date }}</div>
+
+          <ul>
+            <li *ngFor="let item of exp.description">
+              {{ item }}
+            </li>
+          </ul>
+
+        </div>
+
+      </article>
+
+    </div>
   </div>
-  <h4 class="experience-company">{{exp.company}}</h4>
-  <p class="experience-description">
-    <span *ngFor="let desc of exp.description">- {{desc}}<br></span>
-  </p>
-</div>
 </section>

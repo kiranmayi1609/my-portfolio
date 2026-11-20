@@ -1,24 +1,26 @@
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { Router, RouterLinkActive, RouterModule } from '@angular/router';
 
 interface NavItem {
   path: string;
   label: string;
-  exact?: boolean;
 }
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [CommonModule,RouterModule],
+  imports: [CommonModule],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.scss'
 })
 export class NavbarComponent {
 
-  // isAltTheme = false;
-    navItems = [
+  // Mobile menu state
+  menuOpen = false;
+
+  // Navigation items
+  navItems: NavItem[] = [
     { label: 'About', path: 'about' },
     { label: 'Experience', path: 'experience' },
     { label: 'Journey', path: 'journey' },
@@ -26,43 +28,29 @@ export class NavbarComponent {
     { label: 'Contact', path: 'contact' }
   ];
 
-  // toggleTheme() {
-  //   this.isAltTheme = !this.isAltTheme;
-  //   document.documentElement.classList.toggle('alt-theme');
-  // }
+  // Toggle mobile navigation
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
+  }
 
-  
+  // Smooth scrolling
+  scrollTo(section: string): void {
 
-  constructor(private router: Router) {}
-   
+    this.menuOpen = false;
 
+    if (section === 'top') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
 
+      return;
+    }
 
-  isActive(path: string, exact: boolean = false): boolean {
-    return this.router.isActive(path, {
-      paths: 'exact',
-      queryParams: 'ignored',
-      fragment: 'ignored',
-      matrixParams: 'ignored'
+    document.getElementById(section)?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start'
     });
   }
-
-  scrollTo(section: string) {
-    if (section === 'top') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  navigate(path: string): void {
-    this.router.navigateByUrl(path);
-  }
-
-  navigateWithFragment(path: string, fragment: string): void {
-    this.router.navigate([path], { fragment });
-  }
-
- 
 
 }

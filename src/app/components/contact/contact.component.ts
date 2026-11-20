@@ -1,22 +1,37 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'; // Fixed import
+import { Component, OnDestroy } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators
+} from '@angular/forms';
 
-import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
+
+interface ContactDetail {
+  icon: string;
+  title: string;
+  text: string;
+  link?: string;
+}
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [CommonModule,FormsModule,ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'
 })
-export class ContactComponent {
- contactForm: FormGroup;
+export class ContactComponent implements OnDestroy {
+
+  contactForm: FormGroup;
   isSending = false;
   sendStatus: 'success' | 'error' | null = null;
 
-  contactDetails = [
+  private statusTimer?: ReturnType<typeof setTimeout>;
+
+  contactDetails: ContactDetail[] = [
     {
       icon: 'fas fa-envelope',
       title: 'Email',
@@ -32,24 +47,22 @@ export class ContactComponent {
     {
       icon: 'fas fa-map-marker-alt',
       title: 'Location',
-      text: 'Tobaksvejen,Søborg',
-      link: 'https://www.google.com/maps/place/Tobaksvejen,+S%C3%B8borg/@55.7475,12.5001,15z/data=!4m2!3m1!1s0x4652b9f6c7c7c7c7:0x1234567890abcdef'
+      text: 'Søborg, Denmark'
     },
     {
       icon: 'fab fa-github',
       title: 'GitHub',
-      text: 'https://github.com/kiranmayi1609',
+      text: 'github.com/kiranmayi1609',
       link: 'https://github.com/kiranmayi1609'
     },
     {
       icon: 'fab fa-linkedin',
       title: 'LinkedIn',
-      text: 'www.linkedin.com/in/kiranmayi-tummala',
+      text: 'linkedin.com/in/kiranmayi-tummala',
       link: 'https://www.linkedin.com/in/kiranmayi-tummala'
     }
   ];
 
-  // CORRECTED: Inject FormBuilder instead of FormGroup
   constructor(private fb: FormBuilder) {
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
@@ -58,51 +71,53 @@ export class ContactComponent {
     });
   }
 
-  async sendMessage() {
+  async sendMessage(): Promise<void> {
     if (this.contactForm.invalid) {
-      this.markFormGroupTouched();
+      this.contactForm.markAllAsTouched();
       return;
     }
-    
+
     this.isSending = true;
     this.sendStatus = null;
 
     try {
-      //Map form values to template variables 
       const templateParams = {
         from_name: this.contactForm.value.name,
         from_email: this.contactForm.value.email,
         message: this.contactForm.value.message,
-        to_email: 'kiranmayi1609@gmail.com' 
+        to_email: 'kiranmayi1609@gmail.com'
       };
-      
-      // Send email using EmailJS
+
       await emailjs.send(
-        'service_hblqlk1', // Replace with your service ID
-        'template_0kkm7dc', // Replace with your template ID
+        'service_hblqlk1',
+        'template_0kkm7dc',
         templateParams,
-        'FPt6bKOfjOVACRtuZ' // Replace with your user ID
+        'FPt6bKOfjOVACRtuZ'
       );
-      
+
       this.sendStatus = 'success';
       this.contactForm.reset();
+
     } catch (error) {
       console.error('Error sending email:', error);
       this.sendStatus = 'error';
+
     } finally {
       this.isSending = false;
 
-      // Reset status after a delay
-      setTimeout(() => {
+      if (this.statusTimer) {
+        clearTimeout(this.statusTimer);
+      }
+
+      this.statusTimer = setTimeout(() => {
         this.sendStatus = null;
       }, 5000);
     }
   }
 
-  private markFormGroupTouched() {
-    Object.keys(this.contactForm.controls).forEach(key => {
-      this.contactForm.get(key)?.markAsTouched();
-    });
+  ngOnDestroy(): void {
+    if (this.statusTimer) {
+      clearTimeout(this.statusTimer);
+    }
   }
-
 }

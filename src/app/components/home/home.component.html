@@ -1,11 +1,36 @@
 
-<section class="home mat-elevation-z4">
-    <div class="home-content">
-        <h1>{{ currentPhrase }}<span class="cursor"></span></h1>
-        <p>Full-stack developer specializing in Angualr , .Net , and cloud technologies</p>
-        <a (click)="scrollToSection('projects')" class="cta-button">viewProjects()</a>
-         <a href="/CV.pdf"  class="cta-button " download="My_CV.pdf">
+
+<section class="home" id="home">
+  <div class="home-content">
+
+    <h1>
+      {{ currentPhrase }}<span class="cursor"></span>
+    </h1>
+<p>
+  Computer Science graduate with practical experience
+  developing web and mobile applications using C#,
+  ASP.NET Web API, Angular, React Native and databases.
+  Interested in backend development, mobile applications,
+  system integrations and Generative AI.
+</p>
+
+    <div class="home-buttons">
+
+      <button
+        type="button"
+        class="cta-button"
+        (click)="scrollToSection('projects')">
+        viewProjects()
+      </button>
+
+      <a
+        href="/CV.pdf"
+        class="cta-button download-button"
+        download="My_CV.pdf">
         downloadCV()
       </a>
+
     </div>
+
+  </div>
 </section>

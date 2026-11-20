@@ -1,24 +1,31 @@
 
+<nav class="navbar">
 
+  <!-- Logo -->
+  <div class="logo" (click)="scrollTo('top')">
+    Kiranmayi_portfolio
+  </div>
 
+  <!-- Mobile menu button -->
+  <button
+    class="menu-toggle"
+    (click)="toggleMenu()"
+    [attr.aria-expanded]="menuOpen"
+    aria-label="Toggle navigation menu"
+  >
+    <span>{{ menuOpen ? '✕' : '☰' }}</span>
+  </button>
 
+  <!-- Navigation links -->
+  <div class="nav-links" [class.active]="menuOpen">
 
-<nav>
-  <div class="logo" (click)="scrollTo('top')">Kiranmayi_portfolio</div>
-  <div class="nav-links">
-    <a 
+    <a
       *ngFor="let item of navItems"
-      (click)="scrollTo(item.path)">
+      (click)="scrollTo(item.path)"
+    >
       {{ item.label }}
     </a>
 
-<!-- <div class="theme-toggle" (click)="toggleTheme()">
-  <span class="toggle-track">
-    <span class="toggle-knob" [class.alt-theme]="isAltTheme"></span>
-  </span>
-  <span class="toggle-label">
-    {{ isAltTheme ? ' Theme1' : ' Theme' }}
-  </span>
-</div> -->
   </div>
+
 </nav>

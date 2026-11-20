@@ -1,119 +1,391 @@
 
+/* ==================================
+   JOURNEY - ROADMAP DESIGN
+================================== */
 
-/* Section styling */
-#journey {
-  padding: 100px 20px;
-  position: relative;
-  background: var(--dark);
-  color: var(--code-text);
+.journey-section {
+  background: #080D1A;
+  color: #E2E8F0;
+  padding: 100px 7%;
+  scroll-margin-top: 85px;
+  font-family: 'Poppins', sans-serif;
 }
 
-#journey .section-title {
-  text-align: center;
-  font-size: 2.4rem;
-  margin-bottom: 80px; /*push path line further down */
-  font-weight: bold;
-  color: var(--primary);
-}
-
-/* Container Box */
 .journey-container {
- margin-bottom:110px;
-  // margin: auto;
-  padding: 40px;
-  background: var(--code-bg);
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
-  position: relative;
-  overflow: hidden;
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
+/* SECTION HEADER */
 
-/* Journey path container */
-.journey-path {
-  position: relative;
-  display: flex; 
-  align-items: center;
-  gap: 100px;               
-  margin: 60px auto;
-  width: 80%;   
-  height: 500px;             
+.section-header {
+  margin-bottom: 150px;
 }
 
-/* Path line behind icons */
-.path-line {
+.section-label {
+  display: block;
+  color: #FF6F00;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+.section-header h2 {
+  color: #E2E8F0;
+  font-size: clamp(2rem, 4vw, 2.6rem);
+  font-weight: 600;
+  margin: 0 0 12px;
+}
+
+.section-header h2 span {
+  color: #00D9FF;
+}
+
+.section-header p {
+  max-width: 600px;
+  color: #94A3B8;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  margin: 100;
+}
+
+/* ROADMAP */
+
+.roadmap {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+
+  /* Extra height gives the cards room */
+  min-height: 620px;
+  align-items: stretch;
+}
+
+/* CONNECTING ROAD */
+
+.roadmap-line {
   position: absolute;
   top: 50%;
-  left: 0;
-  width: 110%;
-  height: 4px;
-  background: var(--accent);
-  z-index: 1;
-  border-radius: 4px;
+  left: 7%;
+  right: 7%;
+  height: 3px;
   transform: translateY(-50%);
-  align-items: center;
+  background: linear-gradient(
+    90deg,
+    #FF6F00,
+    #00D9FF,
+    #FF6F00,
+    #00D9FF
+  );
+  border-radius: 10px;
+  opacity: 0.8;
 }
 
-/* Milestone icons */
-.milestone {
-  position: relative; /* no more absolute */
-  text-align: center;
-  z-index: 2;         /* above the line */
+/* ROADMAP ITEM */
+
+.roadmap-item {
+  position: relative;
+  min-width: 0;
 }
 
-.milestone i {
-  font-size: 24px;
-  background: var(--primary);
-  color: white;
-  border-radius: 50%;
-  padding: 15px;
-  border: 4px solid var(--accent);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-}
+/* CARD POSITION */
 
-/* Milestone detail cards */
-.milestone-detail {
+.roadmap-content {
   position: absolute;
-  width: 240px;
-  background: var(--light);
-  border-radius: 12px;
-  padding: 15px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  text-align: left;
-  color: var(--secondary);
+  left: 0;
+  right: 0;
+}
+
+.roadmap-item-up .roadmap-content {
+  bottom: calc(50% + 38px);
+}
+
+.roadmap-item-down .roadmap-content {
+  top: calc(50% + 38px);
+}
+
+/* ROADMAP CARD */
+
+.roadmap-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 20px;
+  background: #142239;
+  border: 1px solid #263449;
+  border-radius: 5px;
+  transition:
+    border-color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.roadmap-card:hover {
+  border-color: rgba(0, 217, 255, 0.6);
+  transform: translateY(-4px);
+}
+
+/* CARD TOP */
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.milestone-number {
+  color: #64748B;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.72rem;
+}
+
+.milestone-period {
+  color: #FF9A3D;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.68rem;
+}
+
+/* ICON */
+
+.milestone-icon {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 217, 255, 0.08);
+  border: 1px solid rgba(0, 217, 255, 0.25);
+  border-radius: 5px;
+  color: #00D9FF;
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+}
+
+/* CARD TEXT */
+
+.roadmap-card h3 {
+  color: #00D9FF;
+  font-size: 0.95rem;
+  font-weight: 600;
   line-height: 1.5;
+  margin: 0 0 12px;
 }
 
-/* Positioning spacing */
-.milestone-detail.top {
-  bottom: 120px; /* floats above the line */
+.roadmap-card p {
+  color: #CBD5E1;
+  font-size: 0.75rem;
+  line-height: 1.8;
+  margin: 0;
+}
+
+/* ROADMAP STOPS */
+
+.roadmap-stop {
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  background: #142239;
+  border: 3px solid #00D9FF;
+  border-radius: 50%;
+  color: #00D9FF;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 2;
+  box-shadow: 0 0 0 6px #080D1A;
 }
 
-.milestone-detail.bottom {
-  top: 120px;   /* floats below the line */
-  left: 50%;
-  transform: translateX(-50%);
+/* JOURNEY FOOTER */
+
+.journey-footer {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  /* Footer stays below the roadmap */
+  margin-top: 35px;
+  padding: 25px 0 15px;
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .milestone-detail {
-    width: 200px;
+.journey-footer p {
+  color: #94A3B8;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.75rem;
+  line-height: 1.8;
+  text-align: center;
+  margin: 0;
+}
+
+.footer-line {
+  width: 55px;
+  height: 1px;
+  background: #263449;
+}
+
+/* TABLET */
+
+@media (max-width: 1024px) {
+  .journey-section {
+    padding: 85px 5%;
+  }
+
+  .roadmap {
+    gap: 12px;
+    min-height: 680px;
+  }
+
+  .roadmap-card {
     padding: 15px;
   }
 
-  .milestone i {
-    font-size: 22px;
-    padding: 14px;
+  .roadmap-card h3 {
+    font-size: 0.85rem;
   }
 
-  .milestone-detail.top {
-    bottom: 90px;
+  .roadmap-card p {
+    font-size: 0.7rem;
   }
 
-  .milestone-detail.bottom {
-    top: 90px;
+  .milestone-period {
+    font-size: 0.62rem;
+  }
+
+  .journey-footer {
+    margin-top: 35px;
+  }
+}
+
+/* MOBILE ROADMAP */
+
+@media (max-width: 768px) {
+  .journey-section {
+    padding: 75px 5%;
+  }
+
+  .section-header {
+    margin-bottom: 40px;
+  }
+
+  .roadmap {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    min-height: auto;
+    padding-left: 55px;
+  }
+
+  .roadmap-line {
+    top: 0;
+    bottom: 0;
+    left: 19px;
+    right: auto;
+    width: 3px;
+    height: auto;
+    transform: none;
+    background: linear-gradient(
+      180deg,
+      #00D9FF,
+      #FF6F00,
+      #00D9FF
+    );
+  }
+
+  .roadmap-item {
+    width: 100%;
+    min-height: auto;
+    display: block;
+  }
+
+  .roadmap-content,
+  .roadmap-item-up .roadmap-content,
+  .roadmap-item-down .roadmap-content {
+    position: static;
+    width: 100%;
+  }
+
+  .roadmap-card {
+    padding: 20px;
+  }
+
+  .roadmap-stop {
+    top: 22px;
+    left: -55px;
+    width: 40px;
+    height: 40px;
+    transform: translateY(-50%);
+  }
+
+  .roadmap-card h3 {
+    font-size: 1rem;
+  }
+
+  .roadmap-card p {
+    font-size: 0.78rem;
+  }
+
+  .journey-footer {
+    margin-top: 30px;
+    padding: 20px 0 15px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 480px) {
+  .journey-section {
+    padding: 65px 4%;
+  }
+
+  .roadmap {
+    padding-left: 48px;
+    gap: 18px;
+  }
+
+  .roadmap-line {
+    left: 17px;
+  }
+
+  .roadmap-stop {
+    left: -48px;
+    width: 36px;
+    height: 36px;
+    font-size: 0.7rem;
+  }
+
+  .roadmap-card {
+    padding: 17px;
+  }
+
+  .card-top {
+    margin-bottom: 15px;
+  }
+
+  .roadmap-card h3 {
+    font-size: 0.9rem;
+  }
+
+  .roadmap-card p {
+    font-size: 0.73rem;
+  }
+
+  .journey-footer {
+    gap: 10px;
+    margin-top: 25px;
+    padding: 15px 0 10px;
+  }
+
+  .footer-line {
+    width: 25px;
   }
 }

@@ -1,12 +1,15 @@
+
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+
 interface Experience {
+  year: string;
   title: string;
+  type: string;
   date: string;
   company: string;
   description: string[];
 }
-
 
 @Component({
   selector: 'app-experience',
@@ -18,33 +21,40 @@ interface Experience {
 export class ExperienceComponent {
 
   experiences: Experience[] = [
-    {
-      title: 'TEC Practice center (Internship/Practical Experience) ',
-      date: '2021 - Present',
-      company: 'Ballerup,Denmark',
-      description: [
-        'Worked as a full-stack developer, building websites and applications using C# Web API, Angular, Blazor, WPF, and MS SQL.',
-        'Integrated front-end and back-end systems, implementing RESTful APIs, database optimization, and workflow automation.',
-        'Led UI/UX design using Figma and applied UML and OOP principles, improving usability of applications.',
-        'Developed data processing modules in C# using LINQ, reducing report generation time and improving performance.',
-        'Built WPF and ASP.NET applications for workflow automation, adopted by 20+ users.',
-        'Collaborated with cross-functional teams to translate business logic into scalable software solutions.',
-        'Gained hands-on experience with GitHub CI/CD pipelines, version control, and team collaboration.',
-        'Participated in Agile ceremonies, contributing to sprint planning, reviews, and retrospectives.'
 
+    {
+      year: '2021',
+      title: 'Programming Specialization',
+      type: 'Practical Software Development Training',
+      date: '2021 – 2026',
+      company: 'Technical Education Copenhagen (TEC), Denmark',
+
+      description: [
+        'Completed programming assignments and practical software development exercises.',
+        'Built individual projects using programming languages, APIs, databases and frontend technologies.',
+        'Practised backend and application development through hands-on project work.',
+        'Worked on problem-solving, debugging and structured software development.',
+        'Used version control and GitHub to manage and maintain project code.',
+        'Continued developing technical knowledge through practical exercises and independent learning.'
       ]
     },
+
     {
-      title: 'Laven Pharma India Pvt Ltd',
-      date: '2011-2013',
-      company: 'Vijayawada,India',
+      year: '2011',
+      title: 'Data Analyst',
+      type: 'Professional Experience',
+      date: '2011 – 2013',
+      company: 'Laven Pharma A/S',
+
       description: [
-        'Automated sales trend analysis using Excel and statistical models, improving forecast accuracy by 20%.',
-        'Developed data dashboards tracking product performance across 50+ retail locations.',
-        'Worked with marketing teams to create technical product documentation, ensuring regulatory compliance',
-        'Analyzed large datasets from multiple sources to identify market growth opportunities.'
+        'Analysed product performance and market trends to support business decisions.',
+        'Collected and analysed data from different sources.',
+        'Used statistical models to support sales forecasting.',
+        'Prepared reports and presentations using Microsoft Excel.',
+        'Collaborated with marketing teams to analyse sales information and communicate findings.'
       ]
     }
+
   ];
 
 }
